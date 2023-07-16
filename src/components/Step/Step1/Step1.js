@@ -40,8 +40,8 @@ export default function Step1() {
             </div>
 
             <div className={styles.email_group}>
-              <div className={styles.input_label}>姓名</div>
-              <input className={styles.input_box} type="text" placeholder="請輸入Email" />
+              <div className={styles.input_label}>E-mail</div>
+              <input className={styles.input_box} type="text" placeholder="請輸入E-mail" />
             </div>
           </div>
 

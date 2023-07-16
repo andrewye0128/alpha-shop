@@ -1,6 +1,6 @@
 .form_container_one {
   width: 540px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 
 .form {
@@ -66,10 +66,14 @@
   grid-area: address;
 }
 
+.input_label {
+  margin-bottom: 5px;
+}
+
 .option_box,
 .input_box {
   width: 100%;
   padding: 15px 20px;
-  border-radius: 8px;
+  border-radius: 5px;
   caret-color: gray;
 }
