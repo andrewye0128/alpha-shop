@@ -72,8 +72,13 @@
 
 .option_box,
 .input_box {
+  border: 1px solid #000;
   width: 100%;
   padding: 15px 20px;
   border-radius: 5px;
   caret-color: gray;
+}
+
+.option_box {
+  cursor: pointer;
 }
