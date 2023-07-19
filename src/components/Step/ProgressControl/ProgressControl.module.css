@@ -1,9 +1,8 @@
 
 .progress_control_container {
   border-top: 1px solid gray;
-  width: 540px;
+  width: 100%;
   margin-top: 50px;
-  margin-left: 30px;
 }
 
 

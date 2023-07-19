@@ -1,16 +1,13 @@
 .form_container_two {
-  width: 435px;
+  width: 80%;
   margin-top: 64px;
-  margin-left: 30px;
 }
 
 .form {
-  /* outline: 1px solid tomato; */
   width: 100%;
 }
 
 .form_body {
-  /* outline: 1px solid tomato; */
   width: 100%;
 }
 

@@ -1,14 +1,17 @@
 
 .register_container {
   /* outline: 1px solid tomato; */
-  width: 450px;
-  margin-left: 30px;
+  width: 83%;
 }
 
 .progress_container {
-  /* outline: 1px solid blue; */
   display: flex;
   justify-content: space-between;
+}
+
+.register_container h2 {
+  margin: 0;
+  margin-bottom: 20px;
 }
 
 .progress_group {
