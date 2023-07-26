@@ -2,19 +2,8 @@
 
 
 *,
-*:before,
+*::before,
 *::after {
   box-sizing: border-box;
   font-family: 'Noto Sans TC', sans-serif;
-}
-
-.main_wrapper {
-  padding-top: 80px;
-}
-
-.main_container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1100px;
-  margin: 0 auto;
 }
