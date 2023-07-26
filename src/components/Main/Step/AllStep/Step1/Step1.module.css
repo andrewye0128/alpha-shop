@@ -1,0 +1,82 @@
+.form_container_one {
+  width: 100%;
+}
+
+.form {
+  margin-top: 40px;
+}
+
+.form_title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+
+
+.form_row {
+  width: 100%;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    'title title . name name name'
+    'phone phone phone email email email'
+    'city city . address address address';
+}
+
+/* flexbox方式 */
+
+/* .formRow {
+  outline: 1px solid blue;
+  width: 540px;
+  display: flex;
+} */
+
+.title_group {
+  width: 160px;
+  grid-area: title;
+}
+
+.name_group {
+  width: 350px;
+  grid-area: name;
+}
+
+.phone_group {
+  width: 255px;
+  grid-area: phone;
+}
+
+.email_group {
+  width: 266px;
+  grid-area: email;
+}
+
+.city_group {
+  width: 160px;
+  grid-area: city;
+}
+
+.address_group {
+  width: 350px;
+  grid-area: address;
+}
+
+.input_label {
+  margin-bottom: 5px;
+}
+
+.option_box,
+.input_box {
+  border: 1px solid #000;
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 5px;
+  caret-color: gray;
+}
+
+.option_box {
+  cursor: pointer;
+}

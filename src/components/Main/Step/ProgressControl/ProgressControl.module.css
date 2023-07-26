@@ -1,0 +1,63 @@
+
+.progress_control_container {
+  border-top: 1px solid gray;
+  width: 100%;
+  margin-top: 50px;
+}
+
+
+.button_group {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 23px;
+}
+
+.button_group_one {
+  display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding-top: 23px;
+}
+
+.progress_control_container button {
+  width: 32%;
+  padding: 13px 0;
+  border-color: transparent;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.progress_control_container button:hover {
+  width: 32%;
+  color: #fff;
+  padding: 13px 0;
+  background-color: #F67599;
+  border-radius: 5px;
+}
+
+.prev_button,
+.next_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 按鈕箭頭 */
+.arrow_right,
+.arrow_left {
+  fill: #000;
+}
+
+.progress_control_container button:hover .arrow_right,
+.progress_control_container button:hover .arrow_left {
+  fill: #fff;
+}
+
+.arrow_left {
+  margin-right: 10px;
+}
+
+.arrow_right {
+  margin-left: 10px;
+}
