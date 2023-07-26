@@ -1,4 +1,5 @@
 # Adrew's Alpha Shop
+![Image](https://github.com/andrewye0128/alpha-shop/blob/main/public/images/AC%20Alpha%20shop.png)
 
 ## Introduction
 On this webpage, you can freely choose the products you want! Still want to hesitate a bit? No problem, you can add your favorite items to the shopping cart first. However, be careful not to miss the promotional time!
