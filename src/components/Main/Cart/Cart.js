@@ -41,14 +41,14 @@ function Product({ id, img, name, price, totalMius, totalPlus }) {
       <div className={styles.product_container} key={id} data-price={price}>
         <img className={styles.img_container} src={img} />
         <div className={styles.product_info}>
-          <div class={styles.product_name}>{name}</div>
-          <div class={styles.product_control_container}>
-            <div class={styles.product_control}>
+          <div className={styles.product_name}>{name}</div>
+          <div className={styles.product_control_container}>
+            <div className={styles.product_control}>
             <MinusButton 
               className={styles.product_icon}
               onClick={handleMiusClick}
             />
-            <span class={styles.product_count}>{quantity}</span>
+            <span className={styles.product_count}>{quantity}</span>
             <PlusButton 
               className={styles.product_icon}
               onClick={handlePlusClick}
@@ -93,7 +93,7 @@ export default function Cart() {
         </section>
 
 
-        <section class={styles.cart_info}>
+        <section className={styles.cart_info}>
           <div className={styles.text}>運費</div>
           <div className={styles.price}>免費</div>
         </section>

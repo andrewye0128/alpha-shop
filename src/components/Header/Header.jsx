@@ -46,17 +46,17 @@ export default function Header() {
             <ul className={`${styles.nav_list} ${styles.site_action_list}`}>
 
               {/* <!-- search --> */}
-              <li class={styles.nav_item}>
+              <li className={styles.nav_item}>
                 <Search className={styles.icon}/>
               </li>
 
               {/* <!-- cart --> */}
-              <li class={styles.nav_item}>
+              <li className={styles.nav_item}>
                 <Cart className={styles.icon}/>
               </li>
 
               {/* <!-- moon --> */}
-              <li id="theme-toggle" class={styles.nav_item}>
+              <li id="theme-toggle" className={styles.nav_item}>
                 <Moon className={styles.icon}/>
 
                 {/* <!-- Sun --> */}

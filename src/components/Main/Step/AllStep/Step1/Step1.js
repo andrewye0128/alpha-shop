@@ -12,7 +12,7 @@ function SelectOption({ label, datas }) {
         <select className={styles.option_box} required>
           {datas.map( data=> {
              return (
-               <option key={data.value} value={data.value} selected>{data.name}</option>
+               <option key={data.value} value={data.value}>{data.name}</option>
              )
           })}
         </select>

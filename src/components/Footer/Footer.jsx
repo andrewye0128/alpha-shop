@@ -9,7 +9,7 @@ import { ReactComponent as Whatsapp } from '../../icons/whatsapp.svg';
 
 const footerData = [
     { 
-      id:1,
+      id: 1,
       title: '客戶服務',
       links:[
         { title: '運送說明'},
@@ -42,9 +42,9 @@ function FooterSection( { datas } ) {
       datas.map(data => (
         <section key={data.id} className={styles.footer_section}>
           <h2 className={styles.section_title}>{data.title}</h2>
-          <div class={styles.section_content}>
+          <div className={styles.section_content}>
             {data.links.map((link) => (
-              <a className={styles.page_link} href="#">{link.title}</a>
+              <a className={styles.page_link} key={link.title}  href="#">{link.title}</a>
             ))}
           </div>
         </section>
