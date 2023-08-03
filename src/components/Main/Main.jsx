@@ -6,7 +6,7 @@ import styles from "./Main.module.css";
 export default function Main()  {
   
     return (
-       <>
+
           <main className={styles.main_wrapper}>
             <div className={styles.main_container}>
               <Step />
@@ -14,7 +14,7 @@ export default function Main()  {
             </div>
           </main>
 
-       </>
+  
         
     )
   

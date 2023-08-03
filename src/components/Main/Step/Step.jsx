@@ -11,6 +11,7 @@ import AllStep from "./AllStep/AllStep"
 function Step() {
     const [stepPhase, setStepPhase] = useState(1)
 
+    // 方式一
     // function handleNext() {
     //   if (stepPhase < 3) {
     //     setStepPhase(stepPhase + 1)
@@ -22,17 +23,27 @@ function Step() {
     //     setStepPhase(stepPhase - 1)
     //   }
     // }
-  function onClickStep (event) {
-      let target = event.target
-   
-      if (target.className.includes("next_button") && stepPhase < 3) {
-        setStepPhase(stepPhase + 1)
 
-      } else if (target.className.includes("prev_button") && stepPhase > 1) {
-        setStepPhase(stepPhase - 1)
-      }
+   // 方式二，可以，但會有問題
+  // function onClickStep (event) {
+  //     let target = event.target
+   
+  //     if (target.className.includes("next_button") && stepPhase < 3) {
+  //       setStepPhase(stepPhase + 1)
+
+  //     } else if (target.className.includes("prev_button") && stepPhase > 1) {
+  //       setStepPhase(stepPhase - 1)
+  //     }
     
-    }
+  //   }
+
+  const onClickStep = (nowStep) => {
+    // 如果step 大於3 或小於1 就停止
+    if (stepPhase + nowStep > 3 || stepPhase + nowStep < 1) return
+
+    setStepPhase((prev) => prev + nowStep)
+
+  }
 
 
 
