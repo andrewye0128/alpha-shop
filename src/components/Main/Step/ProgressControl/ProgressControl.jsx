@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from "./ProgressControl.module.css";
+import  { useContext } from "react";
+import { StepContext} from "../../../../Context/StepContext"
 import { ReactComponent as LeftArrow } from "../../../../icons/left-arrow.svg"
 import { ReactComponent as RightArrow } from "../../../../icons/right-arrow.svg"
 
@@ -98,11 +100,16 @@ function ButtonTwo({ clickStep }) {
 }
 
 function ButtonThree({ clickStep }) {
+  const { confirmSubmit } = useContext(StepContext)
+
   return (
     <section className={styles.button_group_one}>
       <PrevBtn clickStep={() => clickStep(-1)} />
 
-      <button className={styles.arrow_group}>
+      <button 
+        className={styles.arrow_group}
+        onClick={confirmSubmit}
+      >
         確定下單
        </button>
 

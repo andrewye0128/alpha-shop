@@ -1,8 +1,10 @@
-import React from "react";
+import { useContext } from "react";
+import { StepContext } from "../../../../../Context/StepContext"
 import styles from "./Step3.module.css";
 
 
 export default function Step3() {
+  const { storeInput } = useContext(StepContext)
   
     return (
       <section className={styles.form_container_three}>
@@ -15,7 +17,14 @@ export default function Step3() {
 
               <div className={styles.input_group}>
                 <div className={styles.input_label}>持卡人姓名</div>
-                <input className={styles.input_box} type="text" placeholder="John Doe" />
+                <input 
+                  className={styles.input_box} 
+                  type="text"
+                  name="userName"  
+                  placeholder="John Doe" 
+                  onChange={(e) => storeInput(e)}
+                  
+                />
               </div>
             </div>
 
@@ -23,7 +32,13 @@ export default function Step3() {
             <div className={styles.form_row_one}>
               <div className={styles.input_group}>
                 <div className={styles.input_label}>卡號</div>
-                <input className={styles.input_box} type="text" placeholder="1111 2222 3333 4444" />
+                <input 
+                  className={styles.input_box} 
+                  type="text"
+                  name="carNum" 
+                  placeholder="1111 2222 3333 4444" 
+                  onChange={(e) => storeInput(e)}
+                />
               </div>
             </div>
 
@@ -32,12 +47,25 @@ export default function Step3() {
             <div className={styles.form_row_two}>
               <div className={styles.input_group}>
                 <div className={styles.input_label}>有效期限</div>
-                <input className={styles.input_box} type="text" placeholder="MM/YY" />
+                <input 
+                  className={styles.input_box}
+                  type="text" 
+                  name="cardDate"  
+                  placeholder="MM/YY" 
+                  onChange={(e) => storeInput(e)}
+
+                />
               </div>
 
               <div className={styles.input_group}>
                 <div className={styles.input_label}>CVC / CCV</div>
-                <input className={styles.input_box} type="text" placeholder="123" />
+                <input 
+                  className={styles.input_box}
+                  type="text" 
+                  name="cardCvc" 
+                  placeholder="123" 
+                  onChange={(e) => storeInput(e)}
+                />
               </div>
             </div>
 

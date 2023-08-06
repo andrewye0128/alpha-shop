@@ -13,7 +13,7 @@ export default function Step2() {
           <label className={styles.radio_group} data-price="0">
 
             {/* <div className={styles.radio_group}> */}
-            <input id="shipping-standard" type="radio" name="shipping" checked />
+            <input id="shipping-standard" type="radio" name="shipping" defaultChecked={true} />
             <span className={styles.checkmark}></span>
             <div className={styles.radio_info}>
               <div className={styles.radio_info_container}>
