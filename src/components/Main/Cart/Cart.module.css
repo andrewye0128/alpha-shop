@@ -46,6 +46,10 @@
   margin-top: 10px;
 }
 
+.product_icon {
+  cursor: pointer;
+}
+
 .price {
   margin-left: 110px;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { useState } from 'react';
+import { useContext } from 'react';
+import { CartContext }  from '../../../Context/CartContext';
 import styles from "./Cart.module.css";
 import { ReactComponent as MinusButton } from '../../../icons/minus.svg';
 import { ReactComponent as PlusButton } from '../../../icons/plus.svg';
@@ -22,100 +23,40 @@ const initialCart = [
 ]
 
 
-function Product({ id, img, name, price, quantity , handleMiusClick, handlePlusClick }) {
+function Product() {
     // const [quantity, setQuantity] = useState(0)
-
+  const { cartItem, handleCartClick } = useContext(CartContext)
     
 
-    return (
-      <div className={styles.product_container} key={id} data-price={price}>
-        <img className={styles.img_container} src={img} />
-        <div className={styles.product_info}>
-          <div className={styles.product_name}>{name}</div>
-          <div className={styles.product_control_container}>
-            <div className={styles.product_control}>
-            <MinusButton 
-              className={styles.product_icon}
-              onClick={()=> handleMiusClick(id, -1, price)}
-            />
-            <span className={styles.product_count}>{quantity}</span>
-            <PlusButton 
-              className={styles.product_icon}
-                onClick={() => handlePlusClick(id, 1, price)}
-            />
+
+       const allItem = cartItem.map((item) => (
+        <div className={styles.product_container} key={item.id}>
+          <img className={styles.img_container} src={item.img} />
+          <div className={styles.product_info}>
+            <div className={styles.product_name}>{item.name}</div>
+            <div className={styles.product_control_container}>
+              <div className={styles.product_control}>
+                <MinusButton
+                  className={styles.product_icon}
+                  onClick={() => handleCartClick(item.id, -1)}
+                />
+                <span className={styles.product_count}>{item.quantity}</span>
+                <PlusButton
+                  className={styles.product_icon}
+                   onClick={() => handleCartClick(item.id, 1)}
+                />
+              </div>
             </div>
           </div>
+          <div className={styles.price}>${item.price * item.quantity}</div>
         </div>
-        <div className={styles.price}>${price * quantity}</div>
-      </div>
-    )
+      ))
+
+  return allItem
 }
 
 export default function Cart() {
-  const [cartItem, setCartItem] = useState(initialCart)
-  const [total, setTotal] = useState(0)
-
-
-
-  function totalMius(price) {
-    if(total > 0) {
-      setTotal(total - price)
-    }
-  }
-
-  function totalPlus(price) {
-    setTotal( total + price)
-  }
-
-  function handlePlusClick(id, nowNum, price ) {
-    const newCartItem = cartItem.map(item => {
-        if(item.id ===id ) {
-          if (nowNum === 1 ){
-            return {
-              ...item,
-              quantity: item.quantity + 1
-            } 
-          } 
-          return item
-        } else {
-          return item
-        }
-    })
-    setCartItem(newCartItem)
-    totalPlus(price)
-    console.log(price)
-  }
-
-  function handleMiusClick(id, nowNum, price) {
-    const newCartItem = cartItem.map(item => {
-      if (item.id === id) {
-        if (nowNum === -1 && item.quantity > 0) {
-          return {
-            ...item,
-            quantity: item.quantity - 1
-          }
-        } 
-        return item
-      } else {
-        return item
-      }
-    })
-    setCartItem(newCartItem)
-    totalMius(price)
-    console.log(price)
-  }
-
-  // function handleMiusClick() {
-  //   if (quantity > 0) {
-  //     setQuantity(quantity - 1)
-  //     totalMius(price)
-  //   }
-  // }
-
-  // function handlePlusClick() {
-  //   setQuantity(quantity + 1)
-  //   totalPlus(price)
-  // }
+  const { totalPrice  } = useContext(CartContext )
 
 
 
@@ -125,20 +66,7 @@ export default function Cart() {
         <h3 className={styles.cart_title}>購物籃</h3>
 
         <section className={styles.product_list} data-total-price="0">
-          {cartItem.map((item) => (
-            <Product 
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              img={item.img}
-              price={item.price}
-              quantity={item.quantity}
-              handleMiusClick={handleMiusClick}
-              handlePlusClick={handlePlusClick}
-
-            />
-          ))}
-            
+          < Product />
         </section>
 
 
@@ -148,7 +76,7 @@ export default function Cart() {
         </section>
         <section className={styles.cart_info}>
           <div className={styles.text}>小計</div>
-          <div className={styles.price}>${total}</div>
+          <div className={styles.price}>${totalPrice}</div>
         </section >
 
       </section >
